@@ -38,7 +38,7 @@ public:
 
     Constraint(const Constraint &) = default;
 
-    Constraint(Constraint &&) noexcept = default;
+    Constraint(Constraint &&) = default;
 
     ~Constraint() = default;
 
@@ -64,7 +64,7 @@ public:
 
     Constraint& operator=(const Constraint &) = default;
 
-    Constraint& operator=(Constraint &&) noexcept = default;
+    Constraint& operator=(Constraint &&) = default;
 
 private:
     static Expression reduce(const Expression &expr)
