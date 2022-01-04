@@ -1,8 +1,10 @@
 Kiwi Release Notes
 ==================
 
-Wrappers 1.3.3 | Solver 1.3.1 | unreleased
+Wrappers 1.4.0 | Solver 1.3.2 | unreleased
 ------------------------------------------
+- make installation PEP517 compliant PR #125
+- add type hints  PR #125
 - make the the c++ part of the code c++20 compliant PR #120
 - test with c++11 and c++20 PR #120
 
