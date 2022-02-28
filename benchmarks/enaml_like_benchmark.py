@@ -8,7 +8,7 @@
 """Time updating an EditVariable in a set of constraints typical of enaml use.
 
 """
-import perf
+import pyperf
 from kiwisolver import Variable, Solver, strength
 
 solver = Solver()
@@ -182,16 +182,16 @@ def bench_update_variables(loops, solver):
     This mimic the use of kiwi in enaml in the case of a resizing.
 
     """
-    t0 = perf.perf_counter()
+    t0 = pyperf.perf_counter()
     for w, h in [(400, 600), (600, 400), (800, 1200), (1200, 800),
                 (400, 800), (800, 400)]*loops:
         solver.suggestValue(width, w)
         solver.suggestValue(height, h)
         solver.updateVariables()
 
-    return perf.perf_counter() - t0
+    return pyperf.perf_counter() - t0
 
 
-runner = perf.Runner()
+runner = pyperf.Runner()
 runner.bench_time_func('kiwi.suggestValue', bench_update_variables,
                        solver, inner_loops=1)
